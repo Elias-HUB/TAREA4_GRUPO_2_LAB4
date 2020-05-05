@@ -7,6 +7,9 @@ import java.awt.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Dominio.Pelicula;
+
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JMenuBar;
@@ -99,7 +102,8 @@ public class VentanaPrincipal extends JFrame {
 		JLabel lblID = new JLabel("");
 		lblID.setBounds(173, 33, 64, 21);
 		MenuAgregar.add(lblID);
-		
+		Pelicula pe1 = new Pelicula();
+		lblID.setText((Integer. toString(pe1.devuelveProximoID())));
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.setBounds(81, 174, 89, 23);
 		MenuAgregar.add(btnAceptar);

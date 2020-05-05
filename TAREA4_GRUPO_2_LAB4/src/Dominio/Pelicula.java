@@ -2,7 +2,7 @@ package Dominio;
 
 public class Pelicula {
 	private final int idPelicula;
-	private static int Cont=1;
+	private static int Cont=0;
 	String Nombre; 
 	Categoria categoria;
 		
@@ -28,6 +28,17 @@ public class Pelicula {
 		this.setNombre(nomb);
 		categoria = new Categoria(cat);
 		
+	}
+	public Pelicula()
+	{
+		idPelicula = Cont++;
+		this.setNombre("");
+		categoria = new Categoria("");
+		
+	}
+	public int devuelveProximoID()
+	{
+		return this.getIdPelicula()+1; 
 	}
 	@Override
 	public String toString() {
