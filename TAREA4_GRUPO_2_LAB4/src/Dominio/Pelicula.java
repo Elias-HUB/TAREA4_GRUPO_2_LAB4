@@ -2,7 +2,7 @@ package Dominio;
 
 public class Pelicula {
 	private final int idPelicula;
-	private static int Cont=0;
+	private static int Cont=1;
 	String Nombre; 
 	Categoria categoria;
 		
@@ -31,7 +31,7 @@ public class Pelicula {
 	}
 	public Pelicula()
 	{
-		idPelicula = Cont++;
+		idPelicula = Cont;
 		this.setNombre("");
 		categoria = new Categoria("");
 		

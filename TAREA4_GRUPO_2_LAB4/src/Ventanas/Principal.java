@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 public class Principal extends JFrame {
 
 	private JPanel contentPanel;
-	private static DefaultListModel<Pelicula> listModel;
+	public static DefaultListModel<Pelicula> listModel;
 
 	/**
 	 * Launch the application.
