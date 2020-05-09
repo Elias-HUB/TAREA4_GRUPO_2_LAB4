@@ -20,7 +20,7 @@ public class PanelIngresoPeliculas extends JPanel {
 	private JTextField txtNombre;
 	private JComboBox cboGenero;
 	private JButton btnAceptar;
-	//private DefaultListModel<Pelicula> listModel;
+	private DefaultListModel<Pelicula> listModel;
 
 	/**
 	 * Create the panel.
@@ -66,7 +66,7 @@ public class PanelIngresoPeliculas extends JPanel {
 					txtNombre.setText("");	
 					cboGenero.setSelectedIndex(0);
 					txbID.setText((Integer. toString(pel.devuelveProximoID())));
-				Principal.listModel.addElement(pel);
+				listModel.addElement(pel);
 				}
 				else 
 				{
@@ -77,6 +77,10 @@ public class PanelIngresoPeliculas extends JPanel {
 		btnAceptar.setBounds(101, 182, 89, 23);
 		add(btnAceptar);
 
+	}
+
+	public void setListModel(DefaultListModel<Pelicula> listModel) {
+		this.listModel = listModel;
 	}
 
 }

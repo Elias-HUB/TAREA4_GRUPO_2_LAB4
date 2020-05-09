@@ -6,6 +6,7 @@ public class Pelicula {
 	String Nombre; 
 	Categoria categoria;
 		
+
 	public String getNombre() {
 		return Nombre;
 	}
@@ -42,6 +43,40 @@ public class Pelicula {
 	}
 	@Override
 	public String toString() {
-		return "Pelicula [idPelicula=" + idPelicula + ", Nombre=" + Nombre + ", categoria=" + categoria.nombre + "]";
+		return "Nombre=" + Nombre + " Categoria=" + categoria.nombre;
+	}
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Nombre == null) ? 0 : Nombre.hashCode());
+		result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
+		result = prime * result + idPelicula;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pelicula other = (Pelicula) obj;
+		if (Nombre == null) {
+			if (other.Nombre != null)
+				return false;
+		} else if (!Nombre.equals(other.Nombre))
+			return false;
+		if (categoria == null) {
+			if (other.categoria != null)
+				return false;
+		} else if (!categoria.equals(other.categoria))
+			return false;
+		if (idPelicula != other.idPelicula)
+			return false;
+		return true;
 	}
 }

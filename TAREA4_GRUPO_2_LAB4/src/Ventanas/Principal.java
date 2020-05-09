@@ -13,6 +13,8 @@ import Dominio.Pelicula;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
@@ -65,7 +67,7 @@ public class Principal extends JFrame {
 				//Abre el formulario PanelListadoLibros
 				contentPanel.removeAll();
 				PanelIngresoPeliculas panel = new PanelIngresoPeliculas();
-				//panel.setDefaultListModel(listModel);
+				panel.setListModel(listModel);			    
 				contentPanel.add(panel);
 				contentPanel.repaint();
 				contentPanel.revalidate();
@@ -81,7 +83,7 @@ public class Principal extends JFrame {
 				//Abre el formulario PanelListadoLibros
 				contentPanel.removeAll();
 				PanelListadoPelicula panel = new PanelListadoPelicula();
-				//panel.setDefaultListModel(listModel);
+				panel.setListModel(listModel);
 				contentPanel.add(panel);
 				contentPanel.repaint();
 				contentPanel.revalidate();				

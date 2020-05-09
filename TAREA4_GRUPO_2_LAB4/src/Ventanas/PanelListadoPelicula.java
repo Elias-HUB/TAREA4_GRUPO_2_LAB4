@@ -9,6 +9,10 @@ import Dominio.Pelicula;
 
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
 import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
@@ -51,25 +55,25 @@ public class PanelListadoPelicula extends JPanel {
 		gbc_scrollPane.gridy = 1;
 		add(scrollPane, gbc_scrollPane);
 		
-		JList Jlist = new JList<Pelicula>();
-		scrollPane.setViewportView(Jlist);
+		
+		
+		jList = new JList<Pelicula>();		
+		scrollPane.setViewportView(jList);
 
 	}
 
-	public DefaultListModel<Pelicula> getListModel() {
-		return listModel;
+	public void setListModel(DefaultListModel<Pelicula> listModel2) {
+		ArrayList<Pelicula> lista = new ArrayList<Pelicula>();		
+		DefaultListModel<Pelicula> PeliculasOrdenadas = new DefaultListModel<Pelicula>();
+		lista =	Collections.list(listModel2.elements());			
+		Collections.sort(lista, (Pelicula1, Pelicula2) -> Pelicula1.getNombre().compareTo(Pelicula2.getNombre()));
+		
+		for (Pelicula item: lista)
+			PeliculasOrdenadas.addElement( item );
+		
+		
+		jList.setModel(PeliculasOrdenadas);
 	}
-
-	public void setListModel(DefaultListModel<Pelicula> listModel) {
-		this.listModel = listModel;
-	}
-
-	public JList<Pelicula> getjList() {
-		return jList;
-	}
-
-	public void setjList(JList<Pelicula> jList) {
-		this.jList = jList;
-	}
+	
 
 }
