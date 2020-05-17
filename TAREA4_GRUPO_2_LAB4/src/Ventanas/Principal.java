@@ -91,10 +91,7 @@ public class Principal extends JFrame {
 			
 		});
 		mnPeliculas.add(mntmListado);
-		
-		
-		
-		contentPanel = new JPanel();
+				contentPanel = new JPanel();
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPanel);
 		getContentPane().setLayout(null);
